@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+
+  <body>
+    <!-- Navbar -->
+    <%- include('./partials/nav.ejs') %>
+
+    <!-- Your content goes here -->
+    <div style="padding: 20px">
+      <h1>Welcome to <%= title %></h1>
+
+      <p>This is the home page content. hello</p>
+      <!-- Add more content as needed -->
+    </div>
+    <div>
+      <% if (blogs.length > 0) { %> <% blogs.forEach(blog => { %>
+      <h3><%= blog.title %></h3>
+      <p><%= blog.snippet %></p>
+      <% }); %> <% } else { %>
+      <p>This is the home page content. hello</p>
+      <% } %>
+    </div>
+  </body>
+  <%- include('./partials/footer.ejs') %>
+</html>

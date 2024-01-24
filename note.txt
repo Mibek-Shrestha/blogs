@@ -1,0 +1,6 @@
+mongodb
+    collection
+    documents
+
+    blog collection
+        blog documents --{id:,title: title: body}
