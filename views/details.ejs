@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+
+  <body>
+    <!-- Navbar -->
+    <%- include('./partials/nav.ejs') %>
+
+    <!-- Your content goes here -->
+    <div style="padding: 20px">
+      <h2><%= blog.title %></h2>
+      <div class="content">
+        <p><%= blog.body %></p>
+        <a class="delete" data-doc="<%= blog._id %>">Delete</a>
+      </div>
+    </div>
+    <script>
+      const trashcan = document.querySelector("a.delete");
+
+      trashcan.addEventListener("click", (e) => {
+        const endpoint = `/blogs/${trashcan.dataset.doc} `;
+
+        fetch(endpoint, {
+          method: "DELETE",
+        })
+          .then((response) => {
+            response.json();
+          })
+          .then((data) => {
+            if (data && data.redirect) {
+              window.location.href = data.redirect;
+            } else {
+              console.error("Invalid data object:", data);
+            }
+          });
+      });
+    </script>
+  </body>
+  <%- include('./partials/footer.ejs') %>
+</html>

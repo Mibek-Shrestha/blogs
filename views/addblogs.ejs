@@ -5,27 +5,22 @@
     <%- include('./partials/nav.ejs') %>
     <h1>Blog Post Submission Form</h1>
 
-    <form action="submit_blog.php" method="post">
+    <form action="/blogs" method="post">
       <!-- Blog Title -->
       <label for="blogTitle">Blog Title:</label>
-      <input type="text" id="blogTitle" name="blogTitle" required />
+      <input type="text" id="blogTitle" name="title" required />
       <br />
 
       <!-- Blog Snippet -->
       <label for="blogSnippet">Blog Snippet (Brief Description):</label>
       <br />
-      <textarea
-        id="blogSnippet"
-        name="blogSnippet"
-        rows="4"
-        required
-      ></textarea>
+      <textarea id="blogSnippet" name="snippet" rows="4" required></textarea>
       <br />
 
       <!-- Blog Body -->
       <label for="blogBody">Blog Body:</label>
       <br />
-      <textarea id="blogBody" name="blogBody" rows="10" required></textarea>
+      <textarea id="blogBody" name="body" rows="10" required></textarea>
       <br />
 
       <!-- Submit Button -->

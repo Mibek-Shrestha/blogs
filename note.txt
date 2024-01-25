@@ -4,3 +4,5 @@ mongodb
 
     blog collection
         blog documents --{id:,title: title: body}
+
+        blogTitle blogSnippet blogBody
